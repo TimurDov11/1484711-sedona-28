@@ -23,8 +23,58 @@
     <main>
       <h1>Гостиницы в Седоне</h1>
 
+      <form action="https://echo.htmlacademy.ru/" method="get">
+        <h2>Фильтр гостиниц</h2>
+        <ul>
+          <li>
+            <h3>Инфраструктура:</h3>
+            <ul>
+              <li>
+                <label><input type="checkbox" name="pool" checked>Бассейн</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="parking">Парковка</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="Wi-Fi">Wi-Fi</label>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>Тип жилья:</h3>
+            <ul>
+              <li>
+                <label><input type="checkbox" name="hotel" checked>Гостиница</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="motel" checked>Мотель</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="apartments" checked>Апартаменты</label>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <h3>Стоимость в сутки (Р):</h3>
+            <!-- Здесь будет фильтр -->
+            <input type="submit" value="Показать">
+          </li>
+        </ul>
+      </form>
+
       <section>
         <h2>Перечень гостиниц в Седоне</h2>
+        <p>Найдено: 3</p>
+        <h3>Сортировка:</h3>
+        <ul>
+          <li><a href="">По цене</a></li>
+          <li><a href="">По типу</a></li>
+          <li><a href="">По рейтингу</a></li>
+        </ul>
+        <p>
+          <button type="button" disabled>Вверх</button>
+          <button type="button">Вниз</button>
+        </p>
         <ul>
           <li>
             <div>

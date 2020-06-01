@@ -40,6 +40,7 @@
         <fieldset>
           <legend><b>Стоимость в сутки (Р):</b></legend>
           <!-- Здесь будет фильтр -->
+          <input type="range" multiple>
         </fieldset>
         <div>
           <input type="submit" value="Показать">
@@ -56,8 +57,8 @@
           <li><a href="">По рейтингу</a></li>
         </ul>
         <p>
-          <button type="button" disabled>Вверх</button>
-          <button type="button">Вниз</button>
+          <button type="button" value="Вверх" disabled><img src="img/icon-up-dir.svg" width="11" height="10" alt="Вверх"></button>
+          <button type="button" value="Вниз"><img src="img/icon-down-dir.svg" width="11" height="10" alt="Вниз"></button>
         </p>
         <ul>
           <li>
@@ -146,13 +147,13 @@
         <h2 class="visually-hidden">Давайте дружить</h2>
         <ul>
           <li>
-            <a href="">Твиттер</a>
+            <a href="" aria-label="Твиттер"><img src="img/icon-twitter1.svg" width="16.98" height="15.01" alt="Твиттер"></a>
           </li>
           <li>
-            <a href="">Фейсбук</a>
+            <a href="" aria-label="Фейсбук"><img src="img/icon-fb1.svg" width="12" height="22" alt="Фейсбук"></a>
           </li>
           <li>
-            <a href="">Ютьюб</a>
+            <a href="" aria-label="Ютьюб"><img src="img/icon-youtube1.svg" width="20" height="16" alt="Ютьюб"></a>
           </li>
         </ul>
       </section>

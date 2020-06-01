@@ -32,28 +32,28 @@
             <p>— №1 —</p>
             <p>Седона - не аттракцион для туристов, там течёт своя жизнь</p>
             <div>
-              <img src="img/" width="800" height="256" alt="Фотография одного из мест городка">
+              <img src="img/image-house1.jpg" width="800" height="256" alt="Фотография одного из мест городка">
             </div>
             <article>
               <ul>
                 <li>
-                  <div>
+                  <!--<div>
                     <img src="img/" width="75" height="72" alt="Иконка дома">
-                  </div>
+                  </div>-->
                   <h4>Жильё</h4>
                   <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
                 </li>
                 <li>
-                  <div>
+                  <!--<div>
                     <img src="img/" width="75" height="72" alt="Иконка бургера">
-                  </div>
+                  </div>-->
                   <h4>Еда</h4>
                   <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
                 </li>
                 <li>
-                  <div>
+                  <!--<div>
                     <img src="img/" width="75" height="72" alt="Иконка подарка">
-                  </div>
+                  </div>-->
                   <h4>Сувениры</h4>
                   <p>Не только китайского, но и местного производства!</p>
                 </li>
@@ -62,7 +62,7 @@
           </li>
           <li>
             <div>
-              <img src="img/" width="800" height="256" alt="Фотография Моста дьявола">
+              <img src="img/image-devilbridge1.jpg" width="800" height="256" alt="Фотография Моста дьявола">
             </div>
             <h3>Там есть Мост дьявола</h3>
             <p>— №2 —</p>
@@ -96,16 +96,25 @@
           и мы покажем вам лучшие предложения гостиниц в Седоне
         </p>
         <button type="button">Поиск гостиницы в Седоне</button>
-        <!-- Здесь будет форма поиска гостиницы в Седоне -->
         <div>
           <form action="https://echo.htmlacademy.ru/" method="get">
             <p>
               <label for="arrival-date">Дата заезда</label>
-              <input id="arrival-date" type="text" name="check-in-date" placeholder="1 января 2017">
+              <input id="arrival-date" type="text" name="check-in-date" placeholder="1 января 2017" value="24 апреля 2017" required>
+              <img src="img/calendar1.svg" width="21" height="23" alt="Открыть календарь">
             </p>
             <p>
               <label for="departure-date">Дата выезда</label>
-              <input id="departure-date" type="text" name="check-out-date" placeholder="2 января 2017">
+              <input id="departure-date" type="text" name="check-out-date" placeholder="2 января 2017" value="4 июля 2017" required>
+              <img src="img/calendar1.svg" width="21" height="23" alt="Открыть календарь">
+            </p>
+            <p>
+              <label for="adults">Взрослые:</label>
+              <input id="adults" type="number" name="number-of-adults" placeholder="1" value="2" min="1" max="10" step="1" required>
+            </p>
+            <p>
+              <label for="children">Дети:</label>
+              <input id="children" type="number" name="number-of-children" placeholder="0" value="0" min="0" max="10" step="1" required>
             </p>
             <button type="submit">Найти</button>
           </form>
@@ -114,7 +123,7 @@
 
       <section>
         <h2 class="visually-hidden">Как до нас добраться</h2>
-        <img src="img/" width="1199" height="594" alt="Карта с местонахождением Седоны">
+        <img src="img/map1.jpg" width="1199" height="594" alt="Карта с местонахождением Седоны">
         <!-- Здесь будет интерактивная карта -->
       </section>
     </main>
@@ -132,13 +141,13 @@
         <h2 class="visually-hidden">Давайте дружить</h2>
         <ul>
           <li>
-            <a href="" aria-label="Твиттер">Твиттер</a>
+            <a href="" aria-label="Твиттер"><img src="img/icon-twitter1.svg" width="16.98" height="15.01" alt="Твиттер"></a>
           </li>
           <li>
-            <a href="">Фейсбук</a>
+            <a href="" aria-label="Фейсбук"><img src="img/icon-fb1.svg" width="12" height="22" alt="Фейсбук"></a>
           </li>
           <li>
-            <a href="">Ютьюб</a>
+            <a href="" aria-label="Ютьюб"><img src="img/icon-youtube1.svg" width="20" height="16" alt="Ютьюб"></a>
           </li>
         </ul>
       </section>

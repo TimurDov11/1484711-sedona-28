@@ -11,12 +11,12 @@
         <a href="">
           <img src="img/logo1.svg" width="138" height="70" alt="Логотип города Седона">
         </a>
-        <UL>
-          <LI><a href="">Информация</a></LI>
-          <LI><a href="">Фото и видео</a></LI>
-          <LI><a href="">Карта штата</a></LI>
-          <LI><a href="inner.html">Гостиницы</a></LI>
-        </UL>
+        <ul>
+          <li><a href="">Информация</a></li>
+          <li><a href="">Фото и видео</a></li>
+          <li><a href="">Карта штата</a></li>
+          <li><a href="inner.html">Гостиницы</a></li>
+        </ul>
       </nav>
     </header>
 
@@ -37,23 +37,14 @@
             <article>
               <ul>
                 <li>
-                  <!--<div>
-                    <img src="img/" width="75" height="72" alt="Иконка дома">
-                  </div>-->
                   <h4>Жильё</h4>
                   <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
                 </li>
                 <li>
-                  <!--<div>
-                    <img src="img/" width="75" height="72" alt="Иконка бургера">
-                  </div>-->
                   <h4>Еда</h4>
                   <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
                 </li>
                 <li>
-                  <!--<div>
-                    <img src="img/" width="75" height="72" alt="Иконка подарка">
-                  </div>-->
                   <h4>Сувениры</h4>
                   <p>Не только китайского, но и местного производства!</p>
                 </li>
@@ -87,7 +78,7 @@
       </section>
 
       <section>
-        <h2 class="visually-hidden"><b>Форма поиска гостиницы в Седоне</b></h2>
+        <h2 class="visually-hidden">Форма поиска гостиницы в Седоне</h2>
         <p>
           <b>Заинтересовались?</b>
         </p>
@@ -100,21 +91,25 @@
           <form action="https://echo.htmlacademy.ru/" method="get">
             <p>
               <label for="arrival-date">Дата заезда</label>
-              <input id="arrival-date" type="text" name="check-in-date" placeholder="1 января 2017" value="24 апреля 2017" required>
-              <img src="img/calendar1.svg" width="21" height="23" alt="Открыть календарь">
+              <input id="arrival-date" type="text" name="check-in-date" placeholder="24 апреля 2017" required>
+              <button type="button" value="Открыть календарь"><img src="img/calendar1.svg" width="21" height="23" alt="Календарь"></button>
             </p>
             <p>
               <label for="departure-date">Дата выезда</label>
-              <input id="departure-date" type="text" name="check-out-date" placeholder="2 января 2017" value="4 июля 2017" required>
-              <img src="img/calendar1.svg" width="21" height="23" alt="Открыть календарь">
+              <input id="departure-date" type="text" name="check-out-date" placeholder="4 июля 2017" required>
+              <button type="button" value="Открыть календарь"><img src="img/calendar1.svg" width="21" height="23" alt="Календарь"></button>
             </p>
             <p>
               <label for="adults">Взрослые:</label>
-              <input id="adults" type="number" name="number-of-adults" placeholder="1" value="2" min="1" max="10" step="1" required>
+              <button type="button" value="Минус"><img src="img/Minus.svg" width="12" height="3" alt="Минус"></button>
+              <input id="adults" type="text" name="number-of-adults" placeholder="2" required>
+              <button type="button" value="Плюс"><img src="img/Plus.svg" width="11" height="11" alt="Плюс"></button>
             </p>
             <p>
               <label for="children">Дети:</label>
-              <input id="children" type="number" name="number-of-children" placeholder="0" value="0" min="0" max="10" step="1" required>
+              <button type="button" value="Минус"><img src="img/Minus.svg" width="12" height="3" alt="Минус"></button>
+              <input id="children" type="text" name="number-of-children" placeholder="0" required>
+              <button type="button" value="Плюс"><img src="img/Plus.svg" width="11" height="11" alt="Плюс"></button>
             </p>
             <button type="submit">Найти</button>
           </form>
@@ -141,13 +136,13 @@
         <h2 class="visually-hidden">Давайте дружить</h2>
         <ul>
           <li>
-            <a href="" aria-label="Твиттер"><img src="img/icon-twitter1.svg" width="16.98" height="15.01" alt="Твиттер"></a>
+            <a href="" aria-label="Твиттер"><img src="img/icon-twitter1.svg" width="16.98" height="15.01" alt=""></a>
           </li>
           <li>
-            <a href="" aria-label="Фейсбук"><img src="img/icon-fb1.svg" width="12" height="22" alt="Фейсбук"></a>
+            <a href="" aria-label="Фейсбук"><img src="img/icon-fb1.svg" width="12" height="22" alt=""></a>
           </li>
           <li>
-            <a href="" aria-label="Ютьюб"><img src="img/icon-youtube1.svg" width="20" height="16" alt="Ютьюб"></a>
+            <a href="" aria-label="Ютьюб"><img src="img/icon-youtube1.svg" width="20" height="16" alt=""></a>
           </li>
         </ul>
       </section>

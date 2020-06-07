@@ -1,3 +1,106 @@
+:root {
+  --basic-black: #000000;
+  --basic-brown-darkest: #503E33;
+  --basic-brown-darker: #604E43;
+  --basic-brown: #766357;
+  --basic-blue-darkest: #5496BD;
+  --basic-blue-darker: #669EC0;
+  --basic-blue: #81B3D2;
+  --basic-gray-darkest: #333333;
+  --basic-gray-darker: #666666;
+  --basic-gray-dark: #6A6A6A;
+  --basic-gray-special-darkest: #A9A9A9;
+  --basic-gray-special-darker: #BDBBBC;
+  --basic-gray-special: #EBEBEB;
+  --basic-gray-special-light: #CACACA;
+  --basic-gray-border:#E5E5E5;
+  --basic-gray: #EEEEEE;
+  --basic-gray-light: #F2F2F2;
+  --basic-white: #ffffff;
+  --basic-white-footer: rgba(255, 255, 255, 0.9);
+}
+
+body {
+  min-width: 1300px;
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+  line-height: 21px;
+  color: var(--basic-black);
+  text-transform: uppercase;
+  background-color: var(--basic-gray-light);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main-navigatiom {
+  background-color: transparent;
+}
+
+.main-navigation-wrapper {
+  background-color: var(--basic-white);
+}
+
+.site-navigation,
+.advantages-list,
+.advice-list,
+.social-list,
+.infrastructure-list,
+.type-list {
+  list-style: none;
+}
+
+.site-navigation a {
+  line-height: 26px;
+  font-weight: bold;
+  color: var(--basic-black);
+}
+
+.site-navigation a:hover,
+.site-navigation a:focus {
+  color: var(--basic-blue);
+}
+
+.site-navigation a:active {
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.site-navigation a:not([href]) {
+  color: var(--basic-brown);
+}
+
+.main-page {
+  text-align: center;
+}
+
+.main-page-image {
+  text-align: center;
+  background-color: var(--basic-gray-special-darker);
+  background-image: url("../img/background photo1.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.main-page h1 {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.advantages h2 {
+  font-size: 14px;
+  line-height: 26px;
+  color: var(--basic-gray-darkest);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -9,3 +112,231 @@
   overflow: hidden;
 }
 
+.search {
+  background-color: var(--basic-white);
+}
+
+.search b {
+  font-size: 30px;
+  line-height: 24px;
+}
+
+.search p + p {
+  line-height: 24px;
+}
+
+.button {
+  text-align: center;
+  color: var(--basic-white);
+  vertical-align: middle;
+  text-transform: uppercase;
+  border: none;
+}
+
+.form-button,
+.search-button {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.form-button {
+  background-color: var(--basic-brown);
+}
+
+.form-button:hover,
+.form-button:focus {
+  background-color: var(--basic-brown-darker);
+}
+
+.form-button:active {
+  background-color: var(--basic-brown-darkest);
+}
+
+.form-button:active span,
+.search-button:active span {
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.search-form {
+  line-height: 26px;
+  font-weight: bold;
+}
+
+.search-item input {
+  font: inherit;
+  text-transform: uppercase;
+  background-color: var(--basic-gray-light);
+  border: none;
+}
+
+.search-item input:hover {
+  background-color: var(--basic-gray-special);
+}
+
+.search-item input:focus {
+  background-color: var(--basic-white);
+  border: 2px solid var(--basic-gray-border);
+}
+
+.search-item .button {
+  background-color: var(--basic-white);
+}
+
+.search-item .button:hover,
+.search-item .button:focus {
+  color: var(--basic-black);
+}
+
+.search-item .button:active {
+  color: var(--basic-blue);
+}
+
+.search-button {
+  background-color: var(--basic-blue);
+}
+
+.search-button:hover,
+.search-button:focus {
+  background-color: var(--basic-blue-darker);
+}
+
+.search-button:active {
+  background-color: var(--basic-blue-darkest);
+}
+
+.main-footer {
+  background: var(--basic-white-footer);
+}
+
+.footer-contacts p {
+  font-size: 21px;
+  line-height: 26px;
+}
+
+.footer-contacts a {
+  color: var(--basic-black);
+}
+
+.social-list li {
+  background-color: var(--basic-blue);
+}
+
+.social-list li:hover,
+.social-list li:focus {
+  background-color: var(--basic-blue-darker);
+}
+
+.social-list li:active {
+  background-color: var(--basic-blue-darkest);
+}
+
+.social-list li:active img {
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.footer-copyright {
+  line-height: 26px;
+}
+
+.footer-copyright img:hover,
+.footer-copyright img:focus {
+  color: var(--basic-blue);
+}
+
+.footer-copyright img:active {
+  color: var(--basic-gray-special-darker);
+}
+
+.hotels-selection {
+  color: var(--basic-white);
+  background-color: var(--basic-black);
+  background-image: url("../img/background-hotels1.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.hotels-selection legend {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+.show-button {
+  background-color:transparent;
+  border: 2px solid var(--basic-white);
+  border-radius: 2px;
+}
+
+.show-button:hover,
+.show-button:focus {
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+.found-hotels {
+  background-color: var(--basic-white);
+}
+
+.found-hotels h3 {
+  font-size: 21px;
+  line-height: 26px;
+  color: var(--basic-black);
+}
+
+.found-hotels h3:hover,
+.found-hotels h3:focus {
+  color: var(--basic-blue);
+}
+
+.found-hotels h3:active {
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.hotel-type {
+  color: var(--basic-gray-darkest);
+}
+
+.book-button,
+.details-button {
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.book-button {
+  background-color: var(--basic-brown);
+}
+
+.book-button:hover,
+.book-button:focus {
+  background-color: var(--basic-brown-darker);
+}
+
+.book-button:active {
+  background-color: var(--basic-brown-darkest);
+}
+
+.book-button:active span,
+.details-button:active span {
+  mix-blend-mode: normal;
+  opacity: 0.3;
+}
+
+.details-button {
+  background-color: var(--basic-blue);
+}
+
+.details-button:hover,
+.details-button:focus {
+  background-color: var(--basic-blue-darker);
+}
+
+.details-button:active {
+  background-color: var(--basic-blue-darkest);
+}
+
+.hotel-rating {
+  color: var(--basic-brown-darker);
+  background-color: var(--basic-gray-light);
+}

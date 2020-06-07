@@ -58,19 +58,19 @@
             </li>
           </ul>
         </fieldset>
-        <fieldset>
+        <fieldset class="filter-item">
           <legend><b>Стоимость в сутки (Р):</b></legend>
-          <div>
-            <div>
-              <label>от <input type="number" name="min-price" placeholder="0" min="0" step="1"></label>
-              <label>до <input type="number" name="max-price" placeholder="3000" min="1" step="1"></label>
+          <div class="range-filter">
+            <div class="price-controls">
+              <label class="min-price">от <input type="number" name="min-price" placeholder="0" min="0" step="1"></label>
+              <label class="max-price">до <input type="number" name="max-price" placeholder="3000" min="1" step="1"></label>
             </div>
-            <div>
-              <div>
-                <div></div>
+            <div class="range-controls">
+              <div class="scale">
+                <div class="bar"></div>
               </div>
-              <div></div>
-              <div></div>
+              <div class="toggle toggle-min" tabindex="0"></div>
+              <div class="toggle toggle-max" tabindex="0"></div>
             </div>
           </div>
         </fieldset>

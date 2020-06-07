@@ -16,8 +16,10 @@
   --basic-gray-border:#E5E5E5;
   --basic-gray: #EEEEEE;
   --basic-gray-light: #F2F2F2;
-  --basic-white: #ffffff;
+  --basic-gray-toggle: #ABABAB;
+  --basic-white: #FFFFFF;
   --basic-white-footer: rgba(255, 255, 255, 0.9);
+  --basic-white-scale: rgba(255, 255, 255, 0.3);
 }
 
 body {
@@ -98,6 +100,7 @@ img {
 .advantages h2 {
   font-size: 14px;
   line-height: 26px;
+  font-weight: normal;
   color: var(--basic-gray-darkest);
 }
 
@@ -123,6 +126,7 @@ img {
 
 .search p + p {
   line-height: 24px;
+  color: var(--basic-gray-darkest);
 }
 
 .button {
@@ -137,6 +141,7 @@ img {
 .search-button {
   font-size: 21px;
   line-height: 26px;
+  font-weight: bold;
 }
 
 .form-button {
@@ -158,16 +163,21 @@ img {
   opacity: 0.3;
 }
 
-.search-form {
+.search-form label {
   line-height: 26px;
   font-weight: bold;
 }
 
 .search-item input {
-  font: inherit;
+  line-height: 26px;
   text-transform: uppercase;
   background-color: var(--basic-gray-light);
   border: none;
+}
+
+.search-item input::placeholder {
+  font-weight: bold;
+  color: var(--basic-black);
 }
 
 .search-item input:hover {
@@ -262,6 +272,67 @@ img {
   line-height: 21px;
 }
 
+.filter-item {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.range-filter {
+  width: 317px;
+}
+
+.range-controls {
+  position: relative;
+  padding-top: 20px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.range-controls .scale {
+  height: 2px;
+  background-color: var(--basic-white-scale);
+}
+
+.range-controls .bar {
+  width: 248px;
+  height: 2px;
+  background-color: var(--basic-white);
+}
+
+.range-controls .toggle {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  width: 3px;
+  height: 3.82px;
+  padding: 0;
+  border: 8px solid var(--basic-white);
+  background-color: var(--basic-gray-toggle);
+  border-radius: 9.5px / 9.545px;
+  box-shadow: 0 1.91px 1px 0 var(--basic-gray-toggle);
+  cursor: pointer;
+}
+
+.range-controls .toggle-min {
+  left: 0px;
+}
+
+.range-controls .toggle-max {
+  left: 240px;
+}
+
+.range-controls .toggle:hover,
+.range-controls .toggle:hover {
+  top: 10px;
+  width: 4.6px;
+  height: 4.36px;
+  padding: 0;
+  border: 9.2px solid var(--basic-white);
+  background-color: var(--basic-gray-toggle);
+  border-radius: 11.5px / 12px;
+}
+
 .show-button {
   background-color:transparent;
   border: 2px solid var(--basic-white);
@@ -272,6 +343,8 @@ img {
 .show-button:focus {
   color: var(--basic-black);
   background-color: var(--basic-white);
+  mix-blend-mode: normal;
+  opacity: 0.3;
 }
 
 .found-hotels {

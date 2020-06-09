@@ -166,6 +166,7 @@ img {
 .search-form label {
   line-height: 26px;
   font-weight: bold;
+  color: var(--basic-black);
 }
 
 .search-item input {
@@ -375,6 +376,7 @@ img {
 .details-button {
   font-size: 14px;
   line-height: 21px;
+  font-weight: bold;
 }
 
 .book-button {
@@ -410,6 +412,6 @@ img {
 }
 
 .hotel-rating {
-  color: var(--basic-brown-darker);
+  color: var(--basic-gray-darker);
   background-color: var(--basic-gray-light);
 }

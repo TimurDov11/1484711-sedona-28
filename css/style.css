@@ -72,6 +72,7 @@ img {
 }
 
 .site-navigation a:active {
+  color: var(--basic-black);
   mix-blend-mode: normal;
   opacity: 0.3;
 }
@@ -173,7 +174,7 @@ img {
   line-height: 26px;
   text-transform: uppercase;
   background-color: var(--basic-gray-light);
-  border: none;
+  border: 2px solid transparent;
 }
 
 .search-item input::placeholder {
@@ -187,6 +188,7 @@ img {
 
 .search-item input:focus {
   background-color: var(--basic-white);
+  outline: none;
   border: 2px solid var(--basic-gray-border);
 }
 
@@ -194,13 +196,16 @@ img {
   background-color: var(--basic-white);
 }
 
-.search-item .button:hover,
-.search-item .button:focus {
-  color: var(--basic-black);
+.search-item svg:hover path,
+.search-item svg:focus path,
+.search-item svg:hover rect,
+.search-item svg:focus rect {
+  fill: var(--basic-black);
 }
 
-.search-item .button:active {
-  color: var(--basic-blue);
+.search-item svg:active path,
+.search-item svg:active rect {
+  fill: var(--basic-blue);
 }
 
 .search-button {
@@ -251,13 +256,15 @@ img {
   line-height: 26px;
 }
 
-.footer-copyright img:hover,
-.footer-copyright img:focus {
-  color: var(--basic-blue);
+.footer-copyright svg:hover path,
+.footer-copyright svg:focus path {
+  fill: var(--basic-blue);
+  outline: none;
 }
 
-.footer-copyright img:active {
-  color: var(--basic-gray-special-darker);
+.footer-copyright svg:active path {
+  fill: var(--basic-gray-special-darker);
+  outline: none;
 }
 
 .hotels-selection {
@@ -364,6 +371,7 @@ img {
 }
 
 .found-hotels h3:active {
+  color: var(--basic-black);
   mix-blend-mode: normal;
   opacity: 0.3;
 }

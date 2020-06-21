@@ -47,6 +47,19 @@ img {
   height: auto;
 }
 
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 
 .page {
   height: 100%;
@@ -102,6 +115,7 @@ img {
 
 .site-navigation {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   margin: 0;
   padding: 0;
@@ -161,8 +175,10 @@ img {
   padding-top: 77.35px;
   margin-bottom: 42.5px;
   background-color: var(--basic-gray-special-darker);
-  background-image: url("../img/background photo1.jpg");
-  background-position: top center;
+  background-image:
+    url("../img/Shape-on-background photo1.svg"),
+    url("../img/background photo1.jpg");
+  background-position: bottom center, top center;
   background-repeat: no-repeat;
 }
 
@@ -177,9 +193,6 @@ img {
   line-height: 26px;
 }
 
-.advantages {outline: 5px solid rgba(0, 255, 0, 0.3);
-  outline-offset: -5px;}
-
 .advantages h2 {
   margin: 0;
   margin-bottom: 51px;
@@ -193,8 +206,6 @@ img {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .advantages-list li {
@@ -211,11 +222,6 @@ img {
   width: 100%;
   color: var(--basic-white);
   background-color: var(--basic-blue)
-}
-
-.advantages-item {
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .advantages-item .advantages-item-1,
@@ -237,16 +243,23 @@ img {
 }
 
 .advantages-list h3 {
-  outline: 5px solid rgba(0, 255, 0, 0.3);
-  outline-offset: -5px;
+  margin-top: 47px;
+}
+
+.advantages-item:nth-child(2) h3 {
+  margin-top: 50px;
 }
 
 .advantages-item p {
   margin-bottom: 23px;
 }
 
-.advantages-item p + p {
-  margin-bottom: 0;
+.advantages-item p:last-of-type {
+  margin-bottom: 54px;
+}
+
+.advantages-item:nth-child(2) p:last-of-type {
+  margin-bottom: 54px;
 }
 
 .advantages-item-1-image,
@@ -262,24 +275,35 @@ img {
 }
 
 .advice-list .advice-item {
+  position: relative;
   background-color: var(--basic-white);
-  outline: 5px solid rgba(0, 255, 0, 0.3);
-  outline-offset: -5px;
 }
 
-.advice-item p {
-  margin-bottom: 0;
-}
-
-.visually-hidden {
+.advice-list .advice-item::before {
+  content: "";
   position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
+  top:55px;
+  width: 75px;
+  height: 77px;
+  margin-left: -37.5px;
+  background-image: url("../img/Group icons house-food-souvenirs1.svg");
+  background-repeat: no-repeat;
+}
+
+.advice-list .advice-item:nth-child(2)::before {
+  background-position: -400px 0;
+}
+
+.advice-list .advice-item:nth-child(3)::before {
+  background-position: -806px 0;
+}
+
+.advice-item h4 {
+  margin-top: 160px;
+}
+
+.advice-item p:last-of-type {
+  margin-bottom: 82px;
 }
 
 .search {
@@ -315,6 +339,10 @@ img {
   vertical-align: middle;
   text-transform: uppercase;
   border: none;
+}
+
+.button:focus {
+  outline: none;
 }
 
 .form-button,
@@ -354,10 +382,16 @@ img {
   position: absolute;
   left: 50%;
   padding-top: 55px;
+  padding-right: 55px;
   padding-bottom: 55px;
+  padding-left: 55px;
   margin-left: -284px;
   background-color: var(--basic-white);
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+}
+
+.search-form > .search-item:nth-child(1) {
+  margin-bottom: 29px;
 }
 
 .search-form label {
@@ -366,7 +400,16 @@ img {
   color: var(--basic-black);
 }
 
+.search-item {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
 .search-item input {
+  padding: 0;
+  padding-top: 6px;
+  padding-bottom: 6px;
   line-height: 26px;
   text-transform: uppercase;
   background-color: var(--basic-gray-light);
@@ -388,26 +431,81 @@ img {
   border: 2px solid var(--basic-gray-border);
 }
 
-.search-item input[type="email"]
+.search-item #arrival-date,
+.search-item #departure-date {
+  width: 346px;
+  padding-right: 37px;
 
-.search-item .button {
-  background-color: var(--basic-white);
 }
 
-.search-item svg:hover path,
-.search-item svg:focus path,
-.search-item svg:hover rect,
-.search-item svg:focus rect {
+.search-item #arrival-date{
+  padding-left: 13px;
+}
+
+.search-item #departure-date {
+  padding-left: 12px;
+}
+
+.search-item #adults,
+.search-item #children {
+  width: 114px;
+  text-align: center;
+}
+
+.search-item .button {
+  position: absolute;
+  padding: 0;
+  background-color: transparent;
+}
+
+.search-item .calendar-button {
+  top: 50%;
+  right: 8px;
+  margin-top: -11.5px;
+}
+
+.calendar-button:hover path,
+.calendar-button:focus path,
+.minus-button:hover rect,
+.minus-button:focus rect,
+.plus-button:hover path,
+.plus-button:focus path {
   fill: var(--basic-black);
 }
 
-.search-item svg:active path,
-.search-item svg:active rect {
+.calendar-button:active path,
+.minus-button:active rect,
+.plus-button:active path {
   fill: var(--basic-blue);
+  outline: none;
 }
 
 .search-form .container {
   display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 54px;
+}
+
+.search-item .minus-button {
+  top: 50%;
+  margin-top: -5.5px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.search-item .minus-button:nth-of-type(1) {
+  right: 89px;
+}
+
+.search-item .minus-button:nth-of-type(2) {
+  right: 88px;
+}
+
+.search-item .plus-button {
+  top: 50%;
+  right: 13px;
+  margin-top: -5.5px;
 }
 
 .search-button {
@@ -555,7 +653,7 @@ img {
 
 .hotels-selection .container,
 .found-hotels .container {
-  width: 1054px;
+  width: 1060px;
   margin: 0 auto;
   outline: 5px solid rgba(0, 255, 0, 0.3);
   outline-offset: -5px;
@@ -691,11 +789,12 @@ img {
   margin-bottom: 30px;
   grid-template-columns: 164px auto 110px;
   grid-template-rows: 20px 42px 27px;
+  border-top: 1px solid var(--basic-gray-border);
   border-bottom: 1px solid var(--basic-gray-border);
 }
 
 .hotels-list li:nth-child(1) {
-  border-top: 1px solid var(--basic-gray-border);
+
 }
 
 .hotels-list .hotel-image {
@@ -744,12 +843,17 @@ img {
 
 .book-button,
 .details-button {
+  padding: 0;
+  padding-top: 3px;
+  padding-bottom: 3px;
   font-size: 14px;
   line-height: 21px;
   font-weight: bold;
 }
 
 .book-button {
+  padding-right: 17px;
+  padding-left: 16px;
   background-color: var(--basic-brown);
 }
 
@@ -769,6 +873,8 @@ img {
 }
 
 .details-button {
+  padding-right: 16px;
+  padding-left: 17px;
   background-color: var(--basic-blue);
 }
 

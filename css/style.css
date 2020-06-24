@@ -134,7 +134,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .site-navigation li:nth-child(1) {
-  margin-right: 134px;
+  margin-right: 147px;
 }
 
 .site-navigation li:nth-child(2) {
@@ -448,7 +448,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .search-item #arrival-date{
-  padding-left: 9px;
+  padding-left: 12px;
 }
 
 .search-item #departure-date {
@@ -515,6 +515,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .search-item .minus-button:nth-of-type(1) {
+  top: 23%;
   right: 89px;
 }
 
@@ -523,7 +524,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .search-item .plus-button {
-  top: 50%;
+  top: 44%;
   right: 13px;
   margin-top: -5.5px;
 }
@@ -580,6 +581,14 @@ input[type="checkbox"].visually-hidden {
   font-size: 21px;
   line-height: 26px;
   text-align: center;
+}
+
+.footer-contacts p:nth-child(2) {
+  margin-left: 3px;
+}
+
+.footer-contacts p:nth-child(3) {
+  margin-left: 45px;
 }
 
 .footer-contacts a {
@@ -644,17 +653,16 @@ input[type="checkbox"].visually-hidden {
 
 .footer-copyright {
   display: flex;
-  justify-content: center;
   align-items: center;
   width: 327px;
   margin: 0;
-  margin-right: auto;
   line-height: 26px;
   text-align: center;
 }
 
 .footer-copyright span {
-  margin-right: 5px;
+  margin-right: 9px;
+  margin-left: 66px;
 }
 
 .footer-copyright svg {

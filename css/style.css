@@ -680,14 +680,6 @@ input[type="checkbox"].visually-hidden {
   outline: none;
 }
 
-.hotels-selection .container,
-.found-hotels .container {
-  width: 1060px;
-  margin: 0 auto;
-  outline: 5px solid rgba(0, 255, 0, 0.3);
-  outline-offset: -5px;
-}
-
 .hotels-selection {
   color: var(--basic-white);
   background-color: var(--basic-black);
@@ -696,15 +688,83 @@ input[type="checkbox"].visually-hidden {
   background-repeat: no-repeat;
 }
 
+.hotels-selection .container,
+.found-hotels .container {
+  width: 1054px;
+  margin: 0 auto;
+  outline: 5px solid rgba(0, 255, 0, 0.3);
+  outline-offset: -5px;
+}
+
+.hotels-selection .container {
+  display: grid;
+  grid-template-columns: 254px 273px auto;
+  grid-template-rows: 1fr 1fr;
+}
+
+.hotels-selection .selection-infrastructure {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
+
 .hotels-selection legend {
   font-size: 16px;
   line-height: 21px;
 }
 
-.filter-item {
+.selection-infrastructure label,
+.selection-type label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.selection-infrastructure label::before,
+.selection-type label::before {
+  content: "";
+  position: absolute;
+  left: -42px;
+  top: 0;
+  width: 23px;
+  height: 23px;
+  border: 2px solid var(--basic-white);
+}
+
+.selection-infrastructure label::after,
+.selection-type label::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: -38px;
+  width: 12px;
+  height: 12px;
+  background-color: green;
+}
+
+.hotels-selection .selection-type {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
+
+.hotels-selection .filter-item {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
   margin: 0;
   padding: 0;
   border: none;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
 }
 
 .range-filter {
@@ -762,6 +822,13 @@ input[type="checkbox"].visually-hidden {
   border-radius: 11.5px / 12px;
 }
 
+.hotels-selection .hotels-selection-button {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
 .show-button {
   background-color:transparent;
   border: 2px solid var(--basic-white);
@@ -782,8 +849,125 @@ input[type="checkbox"].visually-hidden {
   background-color: var(--basic-white);
 }
 
-.sorting-list {
+.found-hotels .sorting {
+  display: flex;
+  padding-top: 29px;
+  padding-bottom: 31px;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
 
+.sorting p,
+.sorting h3,
+.sorting-list li,
+.sorting .sorting-buttons {
+  margin: 0;
+  padding: 0;
+}
+
+.sorting p:nth-child(1) {
+  margin-right: 46px;
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: bold;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
+
+.sorting h3 {
+  margin-top: 2px;
+  margin-right: 24px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: normal;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
+
+.sorting .sorting-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 665px;
+  margin-top: 2px;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
+
+.sorting-list li {
+  margin-right: 16px;
+  margin-left: 16px;
+  font-size: 12px;
+  line-height: 18px;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
+
+.sorting-list li:nth-child(odd) {
+  margin-top: 1px;
+}
+
+.sorting-list li:nth-child(odd) {
+  margin-top: 1px;
+}
+
+.sorting-item a {
+  color: var(--basic-black);
+  mix-blend-mode: normal;
+  opacity: 0.3;
+  border-bottom: 1px dashed var(--basic-blue);
+}
+
+.sorting-item a:not([href]) {
+  color: var(--basic-blue);
+  opacity: 1.0;
+  border: none;
+}
+
+.sorting-item:hover a,
+.sorting-item:focus a {
+  color: var(--basic-blue);
+  opacity: 1.0;
+  outline: none;
+  border-bottom: 1px dashed var(--basic-blue);
+}
+
+.sorting-item:active a:not([href]) {
+  color: var(--basic-black);
+  opacity: 1.0;
+  border: none;
+}
+
+.sorting .sorting-buttons {
+  margin-top: 11px;
+  margin-left: auto;
+  padding: 0;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
+
+.sorting-buttons button {
+  margin-left: 8px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
+}
+
+.sorting-buttons button:nth-of-type(1) {
+  margin-left: 0px;
+}
+
+.sorting-button-up:not([disabled]):hover path,
+.sorting-button-up:focus path,
+.sorting-button-down:not([disabled]):hover path,
+.sorting-button-down:focus path {
+  fill: var(--basic-black);
+}
+
+.sorting-button-up:not([disabled]):active path,
+.sorting-button-down:not([disabled]):active path {
+  fill: var(--basic-blue);
 }
 
 .hotels-list {
@@ -813,13 +997,15 @@ input[type="checkbox"].visually-hidden {
 
 .hotels-list li {
   display: grid;
-  height: 97px;
-  margin-top: 23.5px;
-  margin-bottom: 30px;
+  height: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
   grid-template-columns: 164px auto 110px;
   grid-template-rows: 20px 42px 27px;
   border-top: 1px solid var(--basic-gray-border);
   border-bottom: 1px solid var(--basic-gray-border);
+  outline: 5px solid rgba(0, 255, 255, 0.3);
+  outline-offset: -5px;
 }
 
 .hotels-list li:nth-child(1) {
@@ -853,6 +1039,18 @@ input[type="checkbox"].visually-hidden {
 
 .hotel-stars img {
   margin-left: 5px;
+}
+
+.hotels-list li:nth-child(1) .hotel-stars img:nth-child(1) {
+  margin-left: 22px;
+}
+
+.hotels-list li:nth-child(2) .hotel-stars img:nth-child(1) {
+  margin-left: 47px;
+}
+
+.hotels-list li:nth-child(3) .hotel-stars img:nth-child(1) {
+  margin-left: 71px;
 }
 
 .hotels-list .hotel-type {
@@ -912,6 +1110,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .details-button {
+  margin-right: 4px;
   padding-right: 16px;
   padding-left: 17px;
   background-color: var(--basic-blue);
@@ -936,6 +1135,7 @@ input[type="checkbox"].visually-hidden {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-left: 5px;
   color: var(--basic-gray-darker);
   background-color: var(--basic-gray-light);
 }

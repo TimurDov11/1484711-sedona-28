@@ -37,13 +37,16 @@
             <legend><b>Инфраструктура:</b></legend>
             <ul class="infrastructure-list">
               <li>
-                <label><input class="visually-hidden selection-input-checkbox" type="checkbox" name="pool" checked>Бассейн</label>
+                <input class="visually-hidden selection-input-checkbox" type="checkbox" name="pool" id="infrastructure-item-pool" checked>
+                <label for="infrastructure-item-pool">Бассейн</label>
               </li>
               <li>
-                <label><input class="visually-hidden selection-input-checkbox" type="checkbox" name="parking">Парковка</label>
+                <input class="visually-hidden selection-input-checkbox" type="checkbox" name="parking" id="infrastructure-item-parking">
+                <label for="infrastructure-item-parking">Парковка</label>
               </li>
               <li>
-                <label><input class="visually-hidden selection-input-checkbox" type="checkbox" name="Wi-Fi">Wi-Fi</label>
+                <input class="visually-hidden selection-input-checkbox" type="checkbox" name="Wi-Fi" id="infrastructure-item-Wi-Fi">
+                <label for="infrastructure-item-Wi-Fi">Wi-Fi</label>
               </li>
             </ul>
           </fieldset>
@@ -51,13 +54,16 @@
             <legend><b>Тип жилья:</b></legend>
             <ul class="type-list">
               <li>
-                <label><input class="visually-hidden selection-input-checkbox" type="checkbox" name="hotel" checked>Гостиница</label>
+                <input class="visually-hidden selection-input-checkbox" type="checkbox" name="hotel" id="type-item-hotel" checked>
+                <label for="type-item-hotel">Гостиница</label>
               </li>
               <li>
-                <label><input class="visually-hidden selection-input-checkbox" type="checkbox" name="motel" checked>Мотель</label>
+                <input class="visually-hidden selection-input-checkbox" type="checkbox" name="motel" id="type-item-motel" checked>
+                <label for="type-item-motel">Мотель</label>
               </li>
               <li>
-                <label><input class="visually-hidden selection-input-checkbox" type="checkbox" name="apartments" checked>Апартаменты</label>
+                <input class="visually-hidden selection-input-checkbox" type="checkbox" name="apartments" id="type-item-apartments" checked>
+                <label for="type-item-apartments">Апартаменты</label>
               </li>
             </ul>
           </fieldset>
@@ -65,15 +71,20 @@
             <legend><b>Стоимость в сутки (Р):</b></legend>
             <div class="range-filter">
               <div class="price-controls">
-                <label class="min-price">от <input type="number" name="min-price" placeholder="0" min="0" step="1"></label>
-                <label class="max-price">до <input type="number" name="max-price" placeholder="3000" min="1" step="1"></label>
+                <label for="price-controls-min-price">от</label>
+                <input class="min-price" type="number" name="min-price" placeholder="0" min="0" step="1" id="price-controls-min-price">
+                <label for="price-controls-max-price">до</label>
+                <input class="max-price" type="number" name="max-price" placeholder="3000" min="1" step="1" id="price-controls-max-price">
               </div>
               <div class="range-controls">
                 <div class="scale">
-                  <div class="bar"></div>
+                  <div class="bar" style="
+                    width: 79%;
+                    margin-left: 0%
+                  "></div>
                 </div>
-                <div class="toggle toggle-min" tabindex="0"></div>
-                <div class="toggle toggle-max" tabindex="0"></div>
+                <div class="toggle toggle-min" tabindex="0" style="left: 0%"></div>
+                <div class="toggle toggle-max" tabindex="0" style="left: 79%"></div>
               </div>
             </div>
           </fieldset>

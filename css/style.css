@@ -405,8 +405,6 @@ input[type="checkbox"].visually-hidden {
   line-height: 26px;
   font-weight: bold;
   color: var(--basic-black);
-  outline: 5px solid rgba(0, 255, 0, 0.3);
-  outline-offset: -5px;
 }
 
 .search-item {
@@ -440,23 +438,23 @@ input[type="checkbox"].visually-hidden {
   border: 2px solid var(--basic-gray-border);
 }
 
-.search-item #arrival-date,
-.search-item #departure-date {
+.search-item .arrival-date,
+.search-item .departure-date {
   width: 346px;
   padding-right: 37px;
 
 }
 
-.search-item #arrival-date{
+.search-item .arrival-date {
   padding-left: 12px;
 }
 
-.search-item #departure-date {
+.search-item .departure-date {
   padding-left: 12px;
 }
 
-.search-item #adults,
-.search-item #children {
+.search-item .adults,
+.search-item .children {
   width: 114px;
   text-align: center;
 }
@@ -548,8 +546,6 @@ input[type="checkbox"].visually-hidden {
 
 .location {
   line-height: 0;
-  /*outline: 5px solid rgba(0, 255, 0, 0.3);
-  outline-offset: -5px;*/
 }
 
 .main-footer {
@@ -692,14 +688,21 @@ input[type="checkbox"].visually-hidden {
 .found-hotels .container {
   width: 1054px;
   margin: 0 auto;
-  outline: 5px solid rgba(0, 255, 0, 0.3);
-  outline-offset: -5px;
 }
 
 .hotels-selection .container {
   display: grid;
-  grid-template-columns: 254px 273px auto;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 254px auto 327px;
+  grid-template-rows: 1fr auto;
+  padding-top: 26.5px;
+  padding-bottom: 31px;
+}
+
+.hotels-selection fieldset {
+  margin: 0;
+  padding: 0;
+  padding-right: 10px;
+  border: none;
 }
 
 .hotels-selection .selection-infrastructure {
@@ -707,13 +710,27 @@ input[type="checkbox"].visually-hidden {
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 3;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .hotels-selection legend {
+  margin-bottom: 24px;
   font-size: 16px;
   line-height: 21px;
+}
+
+.selection-infrastructure ul {
+  padding-left: 39px;
+}
+
+.selection-infrastructure li,
+.selection-type li {
+  width: 190px;
+  margin-bottom: 25px;
+}
+
+.selection-infrastructure li:last-child,
+.selection-type li:last-child {
+  margin-bottom: 0;
 }
 
 .selection-infrastructure label,
@@ -724,26 +741,28 @@ input[type="checkbox"].visually-hidden {
   user-select: none;
 }
 
-.selection-infrastructure label::before,
-.selection-type label::before {
+.selection-input-checkbox + label::before {
   content: "";
   position: absolute;
-  left: -42px;
-  top: 0;
+  left: -39px;
+  top: 0.5px;
   width: 23px;
   height: 23px;
-  border: 2px solid var(--basic-white);
+  background-image: url("../img/checkbox-off.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
-.selection-infrastructure label::after,
-.selection-type label::after {
+.selection-input-checkbox:checked + label::after {
   content: "";
   position: absolute;
-  top: 4px;
-  left: -38px;
-  width: 12px;
-  height: 12px;
-  background-color: green;
+  top: 0px;
+  left: -39px;
+  width: 27px;
+  height: 23px;
+  background-image: url("../img/checkbox-on.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
 }
 
 .hotels-selection .selection-type {
@@ -751,8 +770,10 @@ input[type="checkbox"].visually-hidden {
   grid-column-end: 3;
   grid-row-start: 1;
   grid-row-end: 3;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
+}
+
+.selection-type ul {
+  padding-left: 42px;
 }
 
 .hotels-selection .filter-item {
@@ -762,20 +783,79 @@ input[type="checkbox"].visually-hidden {
   grid-row-end: 2;
   margin: 0;
   padding: 0;
+  padding-left: 10px;
   border: none;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
-.range-filter {
-  width: 317px;
+.filter-item legend {
+  margin-bottom: 10.5px;
+}
+
+.range-filter .price-controls::before {
+  content: "";
+  position: absolute;
+  top: 7px;
+  left: 157px;
+  width: 2px;
+  height: 22px;
+  background-color: var(--basic-white);
+}
+
+.range-filter .price-controls {
+  position: relative;
+}
+
+.price-controls label {
+  position: absolute;
+  top: 6.5px;
+}
+
+.price-controls label:nth-of-type(1) {
+  left: 52px;
+  width: 33px;
+  text-align: right;
+}
+
+.price-controls label:nth-of-type(2) {
+  left: 196px;
+  width: 38px;
+  text-align: right;
+}
+
+.price-controls input {
+  padding-top: 6.5px;
+  padding-bottom: 8.5px;
+  color: var(--basic-white);
+  border: 2px solid var(--basic-white);
+  border-radius: 2px;
+  background-color: transparent;
+}
+
+.price-controls input::placeholder {
+  color: var(--basic-white);
+}
+
+.price-controls input:focus {
+  outline: none;
+}
+
+.price-controls .min-price {
+  width: 159px;
+  padding-left: 85px;
+  border-right: none;
+}
+
+.price-controls .max-price {
+  width: 158px;
+  margin-left: -5px;
+  padding-left: 80px;
+  border-left: none;
 }
 
 .range-controls {
   position: relative;
   padding-top: 20px;
-  height: 50px;
-  border-radius: 5px;
+  padding-bottom: 33px;
 }
 
 .range-controls .scale {
@@ -784,7 +864,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .range-controls .bar {
-  width: 248px;
+  width: 79%;
   height: 2px;
   background-color: var(--basic-white);
 }
@@ -808,7 +888,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .range-controls .toggle-max {
-  left: 240px;
+  left: 250px;
 }
 
 .range-controls .toggle:hover,
@@ -827,11 +907,18 @@ input[type="checkbox"].visually-hidden {
   grid-column-end: 4;
   grid-row-start: 2;
   grid-row-end: 3;
+  margin-right: auto;
+  margin-left: auto;
+  padding-bottom: 1px;
 }
 
-.show-button {
+.hotels-selection-button .show-button {
   background-color:transparent;
   border: 2px solid var(--basic-white);
+  padding-top: 7px;
+  padding-right: 35px;
+  padding-bottom: 8px;
+  padding-left: 36px;
   border-radius: 2px;
 }
 
@@ -853,8 +940,6 @@ input[type="checkbox"].visually-hidden {
   display: flex;
   padding-top: 29px;
   padding-bottom: 31px;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .sorting p,
@@ -870,8 +955,6 @@ input[type="checkbox"].visually-hidden {
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .sorting h3 {
@@ -880,8 +963,6 @@ input[type="checkbox"].visually-hidden {
   font-size: 12px;
   line-height: 18px;
   font-weight: normal;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .sorting .sorting-list {
@@ -889,8 +970,6 @@ input[type="checkbox"].visually-hidden {
   flex-wrap: wrap;
   width: 665px;
   margin-top: 2px;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .sorting-list li {
@@ -898,8 +977,6 @@ input[type="checkbox"].visually-hidden {
   margin-left: 16px;
   font-size: 12px;
   line-height: 18px;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .sorting-list li:nth-child(odd) {
@@ -931,8 +1008,14 @@ input[type="checkbox"].visually-hidden {
   border-bottom: 1px dashed var(--basic-blue);
 }
 
-.sorting-item:active a:not([href]) {
+.sorting-item:active a {
   color: var(--basic-black);
+  opacity: 1.0;
+  border: none;
+}
+
+.sorting-item:hover a:not([href]) {
+  color: var(--basic-blue);
   opacity: 1.0;
   border: none;
 }
@@ -941,8 +1024,6 @@ input[type="checkbox"].visually-hidden {
   margin-top: 11px;
   margin-left: auto;
   padding: 0;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .sorting-buttons button {
@@ -950,8 +1031,10 @@ input[type="checkbox"].visually-hidden {
   padding: 0;
   background-color: transparent;
   border: none;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
+}
+
+.sorting-buttons button:focus {
+  outline: none;
 }
 
 .sorting-buttons button:nth-of-type(1) {
@@ -973,8 +1056,6 @@ input[type="checkbox"].visually-hidden {
 .hotels-list {
   display: flex;
   flex-direction: column;
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
 }
 
 .hotels-list h3 {
@@ -1004,12 +1085,6 @@ input[type="checkbox"].visually-hidden {
   grid-template-rows: 20px 42px 27px;
   border-top: 1px solid var(--basic-gray-border);
   border-bottom: 1px solid var(--basic-gray-border);
-  outline: 5px solid rgba(0, 255, 255, 0.3);
-  outline-offset: -5px;
-}
-
-.hotels-list li:nth-child(1) {
-
 }
 
 .hotels-list .hotel-image {

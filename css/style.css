@@ -310,6 +310,13 @@ input[type="checkbox"].visually-hidden {
 
 .advice-item p:last-of-type {
   margin-bottom: 82px;
+  color: var(--basic-gray-darkest);
+}
+
+.advantages-item:nth-child(3) p,
+.advantages-item:nth-child(4) p,
+.advantages-item:nth-child(5) p {
+  color: var(--basic-gray-darkest);
 }
 
 .search {
@@ -394,6 +401,14 @@ input[type="checkbox"].visually-hidden {
   margin-left: -284px;
   background-color: var(--basic-white);
   box-shadow: 0px 7px 15px rgba(0, 1, 1, 0.15);
+}
+
+.search .search-form-show {
+  display: block;
+}
+
+.search .search-form-close {
+  display: none;
 }
 
 .search-form > .search-item:nth-child(1) {
@@ -684,8 +699,7 @@ input[type="checkbox"].visually-hidden {
   background-repeat: no-repeat;
 }
 
-.hotels-selection .container,
-.found-hotels .container {
+.hotels-selection .container {
   width: 1054px;
   margin: 0 auto;
 }
@@ -936,10 +950,16 @@ input[type="checkbox"].visually-hidden {
   background-color: var(--basic-white);
 }
 
+.found-hotels .container {
+  width: 1200px;
+}
+
 .found-hotels .sorting {
   display: flex;
   padding-top: 29px;
+  padding-right: 73px;
   padding-bottom: 31px;
+  padding-left: 73px;
 }
 
 .sorting p,
@@ -1080,11 +1100,21 @@ input[type="checkbox"].visually-hidden {
   display: grid;
   height: auto;
   padding-top: 30px;
+  padding-right: 73px;
   padding-bottom: 30px;
+  padding-left: 73px;
   grid-template-columns: 164px auto 110px;
   grid-template-rows: 20px 42px 27px;
   border-top: 1px solid var(--basic-gray-border);
   border-bottom: 1px solid var(--basic-gray-border);
+}
+
+.hotels-list li:nth-child(2) {
+  margin-top: -1px;
+}
+
+.hotels-list li:nth-child(3) {
+  margin-top: -1px;
 }
 
 .hotels-list .hotel-image {

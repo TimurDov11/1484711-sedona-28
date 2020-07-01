@@ -878,7 +878,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .range-controls .bar {
-  width: 79%;
+  width: 80%;
   height: 2px;
   background-color: var(--basic-white);
 }
@@ -899,21 +899,43 @@ input[type="checkbox"].visually-hidden {
 
 .range-controls .toggle-min {
   left: 0px;
+  position: relative;
+  top: -10px;
+  margin-bottom: -20px;
+  border: 10px solid var(--basic-white);
 }
 
 .range-controls .toggle-max {
-  left: 250px;
+  left: 253px;
+  position: relative;
+  top: -10px;
+  margin-bottom: -20px;
+  border: 10px solid var(--basic-white);
 }
 
-.range-controls .toggle:hover,
-.range-controls .toggle:hover {
-  top: 10px;
+.range-controls .toggle-min::after,
+.range-controls .toggle-max::after {
+  content: "";
+  position: absolute;
+  left: -1.9px;
+  top: -1.9px;
+  width: 3.8px;
+  height: 3.8px;
+  border-radius: 50%;
+  background-color: var(--basic-gray-toggle);
+}
+
+.range-controls .toggle-min:hover,
+.range-controls .toggle-min:focus,
+.range-controls .toggle-max:hover,
+.range-controls .toggle-max:focus {
+  top: -10px;
   width: 4.6px;
   height: 4.36px;
   padding: 0;
   border: 9.2px solid var(--basic-white);
-  background-color: var(--basic-gray-toggle);
   border-radius: 11.5px / 12px;
+  background-color: var(--basic-gray-toggle);
 }
 
 .hotels-selection .hotels-selection-button {
@@ -959,7 +981,7 @@ input[type="checkbox"].visually-hidden {
   display: flex;
   padding-top: 29px;
   padding-right: 73px;
-  padding-bottom: 31px;
+  padding-bottom: 26px;
   padding-left: 73px;
 }
 
@@ -1102,7 +1124,7 @@ input[type="checkbox"].visually-hidden {
   height: auto;
   padding-top: 30px;
   padding-right: 73px;
-  padding-bottom: 30px;
+  padding-bottom: 31px;
   padding-left: 73px;
   grid-template-columns: 164px auto 110px;
   grid-template-rows: 20px 42px 27px;

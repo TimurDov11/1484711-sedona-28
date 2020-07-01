@@ -1,5 +1,6 @@
 :root {
   --basic-black: #000000;
+  --basic-black-sorting-item: rgba(0, 0, 0, 0.3);
   --basic-brown-darkest: #503E33;
   --basic-brown-darker: #604E43;
   --basic-brown: #766357;
@@ -521,18 +522,17 @@ input[type="checkbox"].visually-hidden {
 }
 
 .search-item .minus-button {
-  top: 50%;
+  top: 23%;
   margin-top: -5.5px;
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-.search-item .minus-button:nth-of-type(1) {
-  top: 23%;
+.search-item:nth-of-type(1) .minus-button {
   right: 89px;
 }
 
-.search-item .minus-button:nth-of-type(2) {
+.search-item:nth-of-type(2) .minus-button {
   right: 88px;
 }
 
@@ -575,6 +575,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .index-footer {
+  position: relative;
   margin-top: -120px;
 }
 
@@ -592,14 +593,6 @@ input[type="checkbox"].visually-hidden {
   font-size: 21px;
   line-height: 26px;
   text-align: center;
-}
-
-.footer-contacts p:nth-child(2) {
-  margin-left: 3px;
-}
-
-.footer-contacts p:nth-child(3) {
-  margin-left: 45px;
 }
 
 .footer-contacts a {
@@ -664,6 +657,7 @@ input[type="checkbox"].visually-hidden {
 
 .footer-copyright {
   display: flex;
+  justify-content: center;
   align-items: center;
   width: 327px;
   margin: 0;
@@ -673,7 +667,7 @@ input[type="checkbox"].visually-hidden {
 
 .footer-copyright span {
   margin-right: 9px;
-  margin-left: 66px;
+  /*margin-left: 66px;*/
 }
 
 .footer-copyright svg {
@@ -767,7 +761,7 @@ input[type="checkbox"].visually-hidden {
   background-position: 0 0;
 }
 
-.selection-input-checkbox:checked + label::after {
+.selection-input-checkbox:checked + label::before {
   content: "";
   position: absolute;
   top: 0px;
@@ -775,6 +769,30 @@ input[type="checkbox"].visually-hidden {
   width: 27px;
   height: 23px;
   background-image: url("../img/checkbox-on.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.selection-input-checkbox:disabled + label::before {
+  content: "";
+  position: absolute;
+  left: -39px;
+  top: 0.5px;
+  width: 23px;
+  height: 23px;
+  background-image: url("../img/checkbox-off-disabled.svg");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+}
+
+.selection-input-checkbox:checked:disabled + label::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: -39px;
+  width: 27px;
+  height: 23px;
+  background-image: url("../img/checkbox-on-disabled.svg");
   background-repeat: no-repeat;
   background-position: 0 0;
 }
@@ -887,49 +905,32 @@ input[type="checkbox"].visually-hidden {
   position: absolute;
   top: 12px;
   left: 0;
-  width: 3px;
-  height: 3.82px;
+  box-sizing: content-box;
+  width: 4px;
+  height: 4px;
+  margin-bottom: -20px;
   padding: 0;
   border: 8px solid var(--basic-white);
-  background-color: var(--basic-gray-toggle);
   border-radius: 9.5px / 9.545px;
+  background-color: var(--basic-gray-toggle);
   box-shadow: 0 1.91px 1px 0 var(--basic-gray-toggle);
   cursor: pointer;
 }
 
 .range-controls .toggle-min {
   left: 0px;
-  position: relative;
-  top: -10px;
-  margin-bottom: -20px;
-  border: 10px solid var(--basic-white);
 }
 
 .range-controls .toggle-max {
   left: 253px;
-  position: relative;
-  top: -10px;
-  margin-bottom: -20px;
-  border: 10px solid var(--basic-white);
-}
-
-.range-controls .toggle-min::after,
-.range-controls .toggle-max::after {
-  content: "";
-  position: absolute;
-  left: -1.9px;
-  top: -1.9px;
-  width: 3.8px;
-  height: 3.8px;
-  border-radius: 50%;
-  background-color: var(--basic-gray-toggle);
 }
 
 .range-controls .toggle-min:hover,
 .range-controls .toggle-min:focus,
 .range-controls .toggle-max:hover,
-.range-controls .toggle-max:focus {
-  top: -10px;
+.range-controls .toggle-max:focus
+ {
+  top: 10px;
   width: 4.6px;
   height: 4.36px;
   padding: 0;
@@ -1031,9 +1032,7 @@ input[type="checkbox"].visually-hidden {
 }
 
 .sorting-item a {
-  color: var(--basic-black);
-  mix-blend-mode: normal;
-  opacity: 0.3;
+  color: var(--basic-black-sorting-item);
   border-bottom: 1px dashed var(--basic-blue);
 }
 

@@ -134,20 +134,26 @@ input[type="checkbox"].visually-hidden {
   list-style: none;
 }
 
-.site-navigation li:nth-child(1) {
-  margin-right: 147px;
+.site-navigation li {
+  width: 200px;
 }
 
-.site-navigation li:nth-child(2) {
+.site-navigation li:nth-child(4n-3) {
+  margin-right: 28px;
+}
+
+.site-navigation li:nth-child(4n-2) {
   margin-right: auto;
 }
 
-.site-navigation li:nth-child(3) {
-  margin-left: 224px;
+.site-navigation li:nth-child(4n-1) {
+  margin-left: auto;
+  text-align: right;
 }
 
-.site-navigation li:nth-child(4) {
-  margin-left: auto;
+.site-navigation li:nth-child(4n) {
+  margin-left: 27px;
+  text-align: right;
 }
 
 .site-navigation a {
@@ -182,8 +188,8 @@ input[type="checkbox"].visually-hidden {
   margin-bottom: 42.5px;
   background-color: var(--basic-gray-special-darker);
   background-image:
-    url("../img/Shape-on-background photo1.svg"),
-    url("../img/background photo1.jpg");
+    url("../img/shape-on-background-photo1.svg"),
+    url("../img/background-photo1.jpg");
   background-position: bottom center, top center;
   background-repeat: no-repeat;
 }
@@ -293,7 +299,7 @@ input[type="checkbox"].visually-hidden {
   width: 75px;
   height: 77px;
   margin-left: -37.5px;
-  background-image: url("../img/Group icons house-food-souvenirs1.svg");
+  background-image: url("../img/group-icons-house-food-souvenirs1.svg");
   background-repeat: no-repeat;
 }
 
@@ -570,7 +576,6 @@ input[type="checkbox"].visually-hidden {
   column-gap: 0;
   min-height: 120px;
   margin: 0 auto;
-
   background: var(--basic-white-footer);
 }
 
@@ -661,13 +666,13 @@ input[type="checkbox"].visually-hidden {
   align-items: center;
   width: 327px;
   margin: 0;
+  margin-right: auto;
   line-height: 26px;
   text-align: center;
 }
 
 .footer-copyright span {
   margin-right: 9px;
-  /*margin-left: 66px;*/
 }
 
 .footer-copyright svg {

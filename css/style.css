@@ -412,10 +412,16 @@ input[type="checkbox"].visually-hidden {
 
 .search .search-form-show {
   display: block;
+  animation-name: bounce;
+  animation-duration: 0.6s;
 }
 
 .search .search-form-close {
   display: none;
+}
+
+.search .search-form-error {
+  animation: shake 0.6s;
 }
 
 .search-form > .search-item:nth-child(1) {
@@ -869,7 +875,9 @@ input[type="checkbox"].visually-hidden {
 }
 
 .price-controls input::placeholder {
+  line-height: 17px;
   color: var(--basic-white);
+  opacity: 1;
 }
 
 .price-controls input:focus {
@@ -1038,7 +1046,7 @@ input[type="checkbox"].visually-hidden {
 
 .sorting-item a {
   color: var(--basic-black-sorting-item);
-  border-bottom: 1px dashed var(--basic-blue);
+  border-bottom: 1px dotted var(--basic-blue);
 }
 
 .sorting-item a:not([href]) {
@@ -1273,3 +1281,51 @@ input[type="checkbox"].visually-hidden {
   background-color: var(--basic-gray-light);
 }
 
+@keyframes bounce {
+  0% {
+    transform: translateY(-200px);
+  }
+
+  10% {
+    transform: translateY(-150px);
+  }
+
+
+  20% {
+    transform: translateY(-100px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-10px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(10px);
+  }
+}

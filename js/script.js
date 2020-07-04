@@ -9,11 +9,12 @@ let adultsAmount = adults.querySelector('.adults');
 let children = searchForm.querySelector('.children-item');
 let childrenAmount = children.querySelector('.children');
 
-var isStorageSupport = true;
-var storage = "";
+let isStorageSupport = true;
+let storage = "";
 
 try {
   storage = localStorage.getItem("number-of-adults");
+  storage = localStorage.getItem("number-of-children");
 } catch (err) {
   isStorageSupport = false;
 }
@@ -22,11 +23,13 @@ try {
 formButton.addEventListener("click", function (evt) {
   evt.preventDefault();
   console.log('Кнопка нажата!');
+  searchForm.classList.remove("search-form-error");
   searchForm.classList.toggle('search-form-show');
   searchForm.classList.toggle('search-form-close');
 
   if (storage) {
     adultsAmount.value = storage;
+    childrenAmount.value = storage;
   }
 
   arrival.focus();
@@ -34,22 +37,18 @@ formButton.addEventListener("click", function (evt) {
 
 
 searchForm.addEventListener("submit", function (evt) {
-  if (!arrivalDate.value || !departureDate.value || !!adultsAmount.value || !!childrenAmount.value) {
+  if (!arrival.value || !departure.value || !adultsAmount.value || !childrenAmount.value) {
     evt.preventDefault();
-    searchForm.classList.remove("search-form-errorr");
+    console.log('Нужно заполнить все поля!');
+    searchForm.classList.remove("search-form-error");
     searchForm.offsetWidth = searchForm.offsetWidth;
     searchForm.classList.add("search-form-error");
   } else {
-  localStorage.setItem("number-of-adults", adultsAmount.value);
-  localStorage.setItem("number-of-children", childrenAmount.value);
-  }
+      if (isStorageSupport) {
+        localStorage.setItem("number-of-children", childrenAmount.value);
+      }
+      if (isStorageSupport) {
+        localStorage.setItem("number-of-adults", adultsAmount.value);
+      }
+    }
 });
-
-/*searchForm.addEventListener("submit", function (evt) {
-  if (!arrivalDate.value || !departureDate.value) {
-    evt.preventDefault();
-    console.log("Нужно ввести даты заезда и выезда, количество взрослых и детей");
-} else {
-  localStorage.setItem("arrivalDate", arrivalDate.value);
-  localStorage.setItem("departureDate", departureDate.value);
-});*/

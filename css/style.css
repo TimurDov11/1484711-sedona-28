@@ -401,6 +401,7 @@ input[type="checkbox"].visually-hidden {
 .search .search-form {
   position: absolute;
   left: 50%;
+  z-index: 3;
   padding-top: 55px;
   padding-right: 55px;
   padding-bottom: 55px;
@@ -571,8 +572,23 @@ input[type="checkbox"].visually-hidden {
 }
 
 
-.location {
+.main-page .location {
+  position: relative;
   line-height: 0;
+}
+
+.location iframe {
+  position: relative;
+  z-index: 2;
+  border: none;
+}
+
+.location p {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  margin: 0;
 }
 
 .main-footer {
@@ -587,6 +603,7 @@ input[type="checkbox"].visually-hidden {
 
 .index-footer {
   position: relative;
+  z-index: 2;
   margin-top: -120px;
 }
 

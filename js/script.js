@@ -22,7 +22,6 @@ try {
 
 formButton.addEventListener("click", function (evt) {
   evt.preventDefault();
-  console.log('Кнопка нажата!');
   searchForm.classList.remove("search-form-error");
   searchForm.classList.toggle('search-form-show');
   searchForm.classList.toggle('search-form-close');
@@ -39,7 +38,6 @@ formButton.addEventListener("click", function (evt) {
 searchForm.addEventListener("submit", function (evt) {
   if (!arrival.value || !departure.value || !adultsAmount.value || !childrenAmount.value) {
     evt.preventDefault();
-    console.log('Нужно заполнить все поля!');
     searchForm.classList.remove("search-form-error");
     searchForm.offsetWidth = searchForm.offsetWidth;
     searchForm.classList.add("search-form-error");

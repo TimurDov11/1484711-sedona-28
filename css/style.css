@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 2 version,not dead,not ie <= 11
+*/
+
 :root {
   --basic-black: #000000;
   --basic-black-sorting-item: rgba(0, 0, 0, 0.3);
@@ -56,7 +63,8 @@ input[type="checkbox"].visually-hidden {
   border: 0;
   padding: 0;
   white-space: nowrap;
-  clip-path: inset(100%);
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
 }
@@ -68,6 +76,7 @@ input[type="checkbox"].visually-hidden {
 .page-body {
   min-height: 100%;
   display: grid;
+  grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
   grid-template-rows: min-content 1fr min-content;
   align-content: start;
 }
@@ -413,8 +422,10 @@ input[type="checkbox"].visually-hidden {
 
 .search .search-form-show {
   display: block;
-  animation-name: bounce;
-  animation-duration: 1.6s;
+  -webkit-animation-name: bounce;
+          animation-name: bounce;
+  -webkit-animation-duration: 1.6s;
+          animation-duration: 1.6s;
 }
 
 .search .search-form-close {
@@ -422,7 +433,8 @@ input[type="checkbox"].visually-hidden {
 }
 
 .search .search-form-error {
-  animation: shake 1.6s;
+  -webkit-animation: shake 1.6s;
+          animation: shake 1.6s;
 }
 
 .search-form > .search-item:nth-child(1) {
@@ -450,6 +462,16 @@ input[type="checkbox"].visually-hidden {
   text-transform: uppercase;
   background-color: var(--basic-gray-light);
   border: 2px solid transparent;
+}
+
+.search-item input::-webkit-input-placeholder {
+  font-weight: bold;
+  color: var(--basic-black);
+}
+
+.search-item input::-moz-placeholder {
+  font-weight: bold;
+  color: var(--basic-black);
 }
 
 .search-item input::placeholder {
@@ -595,7 +617,8 @@ input[type="checkbox"].visually-hidden {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-items: center;
-  column-gap: 0;
+  -moz-column-gap: 0;
+       column-gap: 0;
   min-height: 120px;
   margin: 0 auto;
   background: var(--basic-white-footer);
@@ -774,7 +797,9 @@ input[type="checkbox"].visually-hidden {
   position: relative;
   display: block;
   cursor: pointer;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .selection-input-checkbox + label::before {
@@ -889,6 +914,18 @@ input[type="checkbox"].visually-hidden {
   border: 2px solid var(--basic-white);
   border-radius: 2px;
   background-color: transparent;
+}
+
+.price-controls input::-webkit-input-placeholder {
+  line-height: 17px;
+  color: var(--basic-white);
+  opacity: 1;
+}
+
+.price-controls input::-moz-placeholder {
+  line-height: 17px;
+  color: var(--basic-white);
+  opacity: 1;
 }
 
 .price-controls input::placeholder {
@@ -1298,6 +1335,33 @@ input[type="checkbox"].visually-hidden {
   background-color: var(--basic-gray-light);
 }
 
+@-webkit-keyframes bounce {
+  0% {
+    transform: translateY(-395px);
+  }
+
+  10% {
+    transform: translateY(-250px);
+  }
+
+
+  20% {
+    transform: translateY(-100px);
+  }
+
+  70% {
+    transform: translateY(30px);
+  }
+
+  90% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes bounce {
   0% {
     transform: translateY(-395px);
@@ -1322,6 +1386,28 @@ input[type="checkbox"].visually-hidden {
 
   100% {
     transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translateX(-20px);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translateX(20px);
   }
 }
 

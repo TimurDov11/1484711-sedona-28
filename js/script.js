@@ -10,15 +10,15 @@ let children = searchForm.querySelector('.children-item');
 let childrenAmount = children.querySelector('.children');
 
 let isStorageSupport = true;
-let storage = "";
+let storageAdults = "";
+let storageChildren = "";
 
 try {
-  storage = localStorage.getItem("number-of-adults");
-  storage = localStorage.getItem("number-of-children");
+  storageAdults = localStorage.getItem("number-of-adults");
+  storageChildren = localStorage.getItem("number-of-children");
 } catch (err) {
   isStorageSupport = false;
 }
-
 
 formButton.addEventListener("click", function (evt) {
   evt.preventDefault();
@@ -26,9 +26,12 @@ formButton.addEventListener("click", function (evt) {
   searchForm.classList.toggle('search-form-show');
   searchForm.classList.toggle('search-form-close');
 
-  if (storage) {
-    adultsAmount.value = storage;
-    childrenAmount.value = storage;
+  if (storageAdults) {
+    adultsAmount.value = storageAdults;
+  }
+
+  if (storageChildren) {
+    childrenAmount.value = storageChildren;
   }
 
   arrival.focus();

@@ -602,6 +602,7 @@ input[type="checkbox"].visually-hidden {
 .location iframe {
   position: relative;
   z-index: 2;
+  border: none;
 }
 
 .location p {

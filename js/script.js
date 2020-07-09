@@ -1,13 +1,13 @@
-let formButton = document.querySelector('.form-button');
-let searchForm = document.querySelector('.search-form');
-let arrival = searchForm.querySelector('.arrival-date');
-let arrivalDate = arrival.querySelector('[name=check-in-date]');
-let departure = searchForm.querySelector('.departure-date');
-let departureDate = departure.querySelector('[name=check-out-date]');
-let adults = searchForm.querySelector('.adults-item');
-let adultsAmount = adults.querySelector('.adults');
-let children = searchForm.querySelector('.children-item');
-let childrenAmount = children.querySelector('.children');
+let formButton = document.querySelector(".form-button");
+let searchForm = document.querySelector(".search-form");
+let arrival = searchForm.querySelector(".arrival-date");
+let arrivalDate = arrival.querySelector("[name=check-in-date]");
+let departure = searchForm.querySelector(".departure-date");
+let departureDate = departure.querySelector("[name=check-out-date]");
+let adults = searchForm.querySelector(".adults-item");
+let adultsAmount = adults.querySelector(".adults");
+let children = searchForm.querySelector(".children-item");
+let childrenAmount = children.querySelector(".children");
 
 let isStorageSupport = true;
 let storageAdults = "";
@@ -23,8 +23,8 @@ try {
 formButton.addEventListener("click", function (evt) {
   evt.preventDefault();
   searchForm.classList.remove("search-form-error");
-  searchForm.classList.toggle('search-form-show');
-  searchForm.classList.toggle('search-form-close');
+  searchForm.classList.toggle("search-form-show");
+  searchForm.classList.toggle("search-form-close");
 
   if (storageAdults) {
     adultsAmount.value = storageAdults;
